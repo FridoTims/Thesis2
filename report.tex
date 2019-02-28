@@ -1,0 +1,97 @@
+\documentclass{tudelft-report}
+\usepackage{natbib}
+\setcitestyle{authoryear, open={[} ,close={]}}				% [Author, Year]
+\usepackage{changes}
+\usepackage{graphicx}
+\usepackage{xcolor,colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+\usepackage{lscape}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{comment}
+
+\sisetup{detect-all}
+
+%%Nomenclature
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+\item[\bfseries
+ \ifstrequal{#1}{A}{Roman Symbols}{%
+  \ifstrequal{#1}{G}{Greek Symbols}{%
+  \ifstrequal{#1}{Z}{Abbreviations}{}}}%
+]}
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+
+
+
+\begin{document}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+\title{Decreasing the surface turbidity due to overflow losses on a TSHD - A preliminary study}
+\author{F.B.\ Tims}
+\affiliation{Technische Universiteit Delft}
+\coverimage{Images/Dredge.jpg}
+\makecover
+
+%% Include an optional title page.
+\input{title}
+
+\input{preface}
+\input{Textfiles/Summary}
+\input{Textfiles/Samenvatting.tex}
+
+\tableofcontents
+\listoffigures
+\listoftables
+%\input{Textfiles/Nomenclature.tex}
+\printnomenclature
+
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+\input{Textfiles/CH1_Introduction}
+\input{Textfiles/CH2_Description_processes_dredging_plume.tex}
+\input{Textfiles/CH3_Influence_factors_overflow_Turbidity.tex}
+\input{Textfiles/CH4_Possible_Solutions.tex}
+\input{Textfiles/CH5_Analytical_Description_Nozzles}
+\input{Textfiles/CH6_Test_Setup.tex}
+\input{Textfiles/CH7_Test_Results.tex}
+\input{Textfiles/CH8_Integral_Crossflow_Model.tex}
+\input{Textfiles/Conclusion.tex}
+
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+\input{Textfiles/Appendix_A.tex}
+\input{Textfiles/Appendix_B.tex}
+\input{Textfiles/Appendix_C.tex}
+\input{Textfiles/Appendix_D.tex}
+\input{Textfiles/Appendix_E.tex}
+\input{Textfiles/Appendix_F.tex}
+\input{Textfiles/Appendix_G.tex}
+
+
+%\input{appendix-a}
+\bibliography{report}
+
+
+
+
+\end{document}
+
